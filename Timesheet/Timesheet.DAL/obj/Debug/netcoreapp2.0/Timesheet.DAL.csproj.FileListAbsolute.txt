@@ -1,0 +1,17 @@
+C:\Users\Wojtek\Desktop\timesheet\timesheet\Timesheet\Timesheet.DAL\bin\Debug\netcoreapp2.0\Timesheet.DAL.deps.json
+C:\Users\Wojtek\Desktop\timesheet\timesheet\Timesheet\Timesheet.DAL\bin\Debug\netcoreapp2.0\Timesheet.DAL.dll
+C:\Users\Wojtek\Desktop\timesheet\timesheet\Timesheet\Timesheet.DAL\bin\Debug\netcoreapp2.0\Timesheet.DAL.pdb
+C:\Users\Wojtek\Desktop\timesheet\timesheet\Timesheet\Timesheet.DAL\obj\Debug\netcoreapp2.0\Timesheet.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Wojtek\Desktop\timesheet\timesheet\Timesheet\Timesheet.DAL\obj\Debug\netcoreapp2.0\Timesheet.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Wojtek\Desktop\timesheet\timesheet\Timesheet\Timesheet.DAL\obj\Debug\netcoreapp2.0\Timesheet.DAL.AssemblyInfoInputs.cache
+C:\Users\Wojtek\Desktop\timesheet\timesheet\Timesheet\Timesheet.DAL\obj\Debug\netcoreapp2.0\Timesheet.DAL.AssemblyInfo.cs
+C:\Users\Wojtek\Desktop\timesheet\timesheet\Timesheet\Timesheet.DAL\obj\Debug\netcoreapp2.0\Timesheet.DAL.dll
+C:\Users\Wojtek\Desktop\timesheet\timesheet\Timesheet\Timesheet.DAL\obj\Debug\netcoreapp2.0\Timesheet.DAL.pdb
+C:\Users\Wojtek\Desktop\STUDIA\AIWWW\Timesheet\Timesheet\Timesheet.DAL\bin\Debug\netcoreapp2.0\Timesheet.DAL.deps.json
+C:\Users\Wojtek\Desktop\STUDIA\AIWWW\Timesheet\Timesheet\Timesheet.DAL\bin\Debug\netcoreapp2.0\Timesheet.DAL.dll
+C:\Users\Wojtek\Desktop\STUDIA\AIWWW\Timesheet\Timesheet\Timesheet.DAL\bin\Debug\netcoreapp2.0\Timesheet.DAL.pdb
+C:\Users\Wojtek\Desktop\STUDIA\AIWWW\Timesheet\Timesheet\Timesheet.DAL\obj\Debug\netcoreapp2.0\Timesheet.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Wojtek\Desktop\STUDIA\AIWWW\Timesheet\Timesheet\Timesheet.DAL\obj\Debug\netcoreapp2.0\Timesheet.DAL.AssemblyInfoInputs.cache
+C:\Users\Wojtek\Desktop\STUDIA\AIWWW\Timesheet\Timesheet\Timesheet.DAL\obj\Debug\netcoreapp2.0\Timesheet.DAL.AssemblyInfo.cs
+C:\Users\Wojtek\Desktop\STUDIA\AIWWW\Timesheet\Timesheet\Timesheet.DAL\obj\Debug\netcoreapp2.0\Timesheet.DAL.dll
+C:\Users\Wojtek\Desktop\STUDIA\AIWWW\Timesheet\Timesheet\Timesheet.DAL\obj\Debug\netcoreapp2.0\Timesheet.DAL.pdb

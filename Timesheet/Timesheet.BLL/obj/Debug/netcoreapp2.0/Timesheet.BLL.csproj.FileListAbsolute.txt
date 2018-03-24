@@ -1,0 +1,17 @@
+C:\Users\Wojtek\Desktop\timesheet\timesheet\Timesheet\Timesheet.BLL\bin\Debug\netcoreapp2.0\Timesheet.BLL.deps.json
+C:\Users\Wojtek\Desktop\timesheet\timesheet\Timesheet\Timesheet.BLL\bin\Debug\netcoreapp2.0\Timesheet.BLL.dll
+C:\Users\Wojtek\Desktop\timesheet\timesheet\Timesheet\Timesheet.BLL\bin\Debug\netcoreapp2.0\Timesheet.BLL.pdb
+C:\Users\Wojtek\Desktop\timesheet\timesheet\Timesheet\Timesheet.BLL\obj\Debug\netcoreapp2.0\Timesheet.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Wojtek\Desktop\timesheet\timesheet\Timesheet\Timesheet.BLL\obj\Debug\netcoreapp2.0\Timesheet.BLL.AssemblyInfoInputs.cache
+C:\Users\Wojtek\Desktop\timesheet\timesheet\Timesheet\Timesheet.BLL\obj\Debug\netcoreapp2.0\Timesheet.BLL.AssemblyInfo.cs
+C:\Users\Wojtek\Desktop\timesheet\timesheet\Timesheet\Timesheet.BLL\obj\Debug\netcoreapp2.0\Timesheet.BLL.dll
+C:\Users\Wojtek\Desktop\timesheet\timesheet\Timesheet\Timesheet.BLL\obj\Debug\netcoreapp2.0\Timesheet.BLL.pdb
+C:\Users\Wojtek\Desktop\STUDIA\AIWWW\Timesheet\Timesheet\Timesheet.BLL\bin\Debug\netcoreapp2.0\Timesheet.BLL.deps.json
+C:\Users\Wojtek\Desktop\STUDIA\AIWWW\Timesheet\Timesheet\Timesheet.BLL\bin\Debug\netcoreapp2.0\Timesheet.BLL.dll
+C:\Users\Wojtek\Desktop\STUDIA\AIWWW\Timesheet\Timesheet\Timesheet.BLL\bin\Debug\netcoreapp2.0\Timesheet.BLL.pdb
+C:\Users\Wojtek\Desktop\STUDIA\AIWWW\Timesheet\Timesheet\Timesheet.BLL\obj\Debug\netcoreapp2.0\Timesheet.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Wojtek\Desktop\STUDIA\AIWWW\Timesheet\Timesheet\Timesheet.BLL\obj\Debug\netcoreapp2.0\Timesheet.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Wojtek\Desktop\STUDIA\AIWWW\Timesheet\Timesheet\Timesheet.BLL\obj\Debug\netcoreapp2.0\Timesheet.BLL.AssemblyInfoInputs.cache
+C:\Users\Wojtek\Desktop\STUDIA\AIWWW\Timesheet\Timesheet\Timesheet.BLL\obj\Debug\netcoreapp2.0\Timesheet.BLL.AssemblyInfo.cs
+C:\Users\Wojtek\Desktop\STUDIA\AIWWW\Timesheet\Timesheet\Timesheet.BLL\obj\Debug\netcoreapp2.0\Timesheet.BLL.dll
+C:\Users\Wojtek\Desktop\STUDIA\AIWWW\Timesheet\Timesheet\Timesheet.BLL\obj\Debug\netcoreapp2.0\Timesheet.BLL.pdb
