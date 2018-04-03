@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using Timesheet.DAL.EntityFramework;
 
 namespace Timesheet.Web
 {
@@ -15,15 +13,7 @@ namespace Timesheet.Web
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
-                try
-                {
-                    var context = services.GetRequiredService<AppDbContext>();
-                    DbInitializer.Seed(context);
-                }
-                catch (Exception)
-                {
-
-                }
+                
             }
 
             host.Run();

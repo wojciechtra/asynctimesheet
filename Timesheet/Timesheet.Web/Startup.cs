@@ -18,6 +18,7 @@ namespace Timesheet.Web
     public class Startup
     {
         public IConfiguration Configuration { get; }
+        public IServiceCollection Services { get; private set; }
 
         public Startup(IConfiguration configuration)
         {
@@ -29,10 +30,23 @@ namespace Timesheet.Web
         {
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
+            {
+                options.Password.RequiredLength = 4;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireDigit = false;
+                options.User.RequireUniqueEmail = false;
+                
+            })
+                .AddEntityFrameworkStores<AppDbContext>();
+
 
             services.AddTransient<ITimesheetRepository, MockTimesheetRepository>();
             services.AddMvc();
+            services.ConfigureApplicationCookie(options => options.LoginPath = "/Account/Login");
+
+            Services = services;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +55,12 @@ namespace Timesheet.Web
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
+
+            var dbContext = Services.BuildServiceProvider().GetRequiredService<AppDbContext>();
+
+            var userManager = Services.BuildServiceProvider().GetRequiredService<UserManager<IdentityUser>>();
+            var roleManager = Services.BuildServiceProvider().GetRequiredService<RoleManager<IdentityRole>>();
+            DbInitializer.Seed(dbContext, userManager, roleManager);
 
             app.UseAuthentication();
 
