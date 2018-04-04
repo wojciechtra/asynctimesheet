@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DataAccessLayer.Core.EntityFramework.UoW;
+using DataAccessLayer.Core.Interfaces.UoW;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -41,7 +43,8 @@ namespace Timesheet.Web
             })
                 .AddEntityFrameworkStores<AppDbContext>();
 
-
+            services.AddScoped<DbContext, AppDbContext>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddTransient<ITimesheetRepository, MockTimesheetRepository>();
             services.AddMvc();
             services.ConfigureApplicationCookie(options => options.LoginPath = "/Account/Login");

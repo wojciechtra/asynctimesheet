@@ -11,6 +11,8 @@ namespace Timesheet.BLL.Models
 
         public string Comment { get; set; }
 
+        public string UserId { get; set; }
+
         public IdentityUser User { get; set; }
 
         public EntryType EntryType { get; set; }
