@@ -6,6 +6,7 @@ using System;
 using System.Linq;
 using Timesheet.BLL.Models;
 using Timesheet.ViewModels;
+using Timesheet.ViewModels.DataTable;
 
 namespace Timesheet.Web.Controllers
 {
@@ -83,6 +84,34 @@ namespace Timesheet.Web.Controllers
             }
 
             return RedirectToAction("Index", "Home");
+        }
+
+        public JsonResult GetTimesheetEntries()
+        {
+
+            var timesheetEntries = _uow.Repository<TimesheetItem>()
+                .GetRange(u => u.User.NormalizedUserName == User.Identity.Name.ToUpper())
+                .OrderBy(d => d.Day)
+                .Select(e => new TimesheetItemViewModel
+                {
+                    UserName = e.User.UserName,
+                    Day = e.Day.ToString("dd-MM-yyyy"),
+                    DayPercent = e.DayPercent,
+                    Comment = e.Comment,
+                    EntryType = e.EntryType.Name
+
+                });
+            var dataTable = new DataTableObject<TimesheetItemViewModel>();
+            dataTable.aaData = timesheetEntries.ToList();
+            dataTable.iDisplayCount = timesheetEntries.Count();
+            dataTable.iTotalRecords = timesheetEntries.Count();
+
+            return Json(new
+            {
+                iTotalRecords = dataTable.iTotalRecords,
+                iTotalDisplayRecords = dataTable.iDisplayCount,
+                aaData = dataTable.aaData
+            });
         }
     }
 }

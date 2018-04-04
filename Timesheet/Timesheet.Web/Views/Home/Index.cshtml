@@ -2,7 +2,55 @@
 @{
     ViewData["Title"] = "Index";
 }
+<script src="~/js/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="~/js/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 
 <h2>Index</h2>
 
-<p>o hai!</p>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#timesheet-table').DataTable({
+            "language": {
+                "url": "/js/datatables.net/js/Polish.json"
+            },
+            "ajax": '/Timesheet/GetTimesheetEntries',
+            "columnDefs": [
+                { "width": "20%", "targets": 0 },
+                { "width": "40%", "targets": 1 },
+                { "width": "20%", "targets": 2 },
+                { "width": "15%", "targets": 3 },
+                { "width": "5%", "targets": 4 }
+            ],
+            "columns": [
+                { "data": "userName" },
+                { "data": "day" },
+                { "data": "dayPercent" },
+                { "data": "entryType" },
+                { "data": "comment" }
+            ]
+        });
+    });
+</script>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                <h3>Wpisy</h3>
+            </div>
+            <div class="box-body">
+                <table id="timesheet-table" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Imię i Nazwisko</th>
+                            <th>Reprezentowane firmy</th>
+                            <th>Telefon</th>
+                            <th>Email</th>
+                            <th>Akcja</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
