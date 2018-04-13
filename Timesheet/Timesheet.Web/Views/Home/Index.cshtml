@@ -13,6 +13,8 @@
             "language": {
                 "url": "/js/datatables.net/js/Polish.json"
             },
+            "processing": true,
+            "serverSide": true,
             "ajax": '/Timesheet/GetTimesheetEntries',
             "columnDefs": [
                 { "width": "20%", "targets": 0 },
@@ -42,11 +44,11 @@
                 <table id="timesheet-table" class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>Imię i Nazwisko</th>
-                            <th>Reprezentowane firmy</th>
-                            <th>Telefon</th>
-                            <th>Email</th>
-                            <th>Akcja</th>
+                            <th>Nazwa użytkownika</th>
+                            <th>Data</th>
+                            <th>Przepracowano [w %]</th>
+                            <th>Typ</th>
+                            <th>Komentarz</th>
                         </tr>
                     </thead>
                 </table>

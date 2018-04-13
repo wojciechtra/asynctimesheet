@@ -86,11 +86,11 @@ namespace Timesheet.Web.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public JsonResult GetTimesheetEntries()
+        public JsonResult GetTimesheetEntries(int start, int length)
         {
 
             var timesheetEntries = _uow.Repository<TimesheetItem>()
-                .GetRange(u => u.User.NormalizedUserName == User.Identity.Name.ToUpper())
+                .GetRange(u => u.User.NormalizedUserName == User.Identity.Name.ToUpper())                
                 .OrderBy(d => d.Day)
                 .Select(e => new TimesheetItemViewModel
                 {
@@ -102,7 +102,10 @@ namespace Timesheet.Web.Controllers
 
                 });
             var dataTable = new DataTableObject<TimesheetItemViewModel>();
-            dataTable.aaData = timesheetEntries.ToList();
+            dataTable.aaData = timesheetEntries
+                .Skip(start)
+                .Take(length)
+                .ToList();
             dataTable.iDisplayCount = timesheetEntries.Count();
             dataTable.iTotalRecords = timesheetEntries.Count();
 
