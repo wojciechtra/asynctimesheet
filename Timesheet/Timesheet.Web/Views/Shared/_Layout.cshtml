@@ -42,23 +42,26 @@
                         <i class="fa fa-calendar-plus-o fa-4x margin-b-40"></i>
                         <h1 class="tm-banner-title">Timesheet</h1>
                         <p class="tm-banner-subtitle">Śledzenie czasu pracy</p>
+                        <p class="tm-banner-subtitle">@User.Identity.Name</p>
                     </div>
                 </section>
                 <nav class="tm-main-nav">
                     @if (SignInManager.IsSignedIn(User))
                     {
-                    <ul class="tm-main-nav-ul">
-                        <li class="tm-nav-item">
-                            <a asp-controller="Home" asp-action="Index" class="tm-nav-item-link tm-button active">Strona główna</a>
-                        </li>
-                        <li class="tm-nav-item">
-                            <a asp-controller="Timesheet" asp-action="Add" class="tm-nav-item-link tm-button">Dodaj wpis</a>
-                        </li>
-                        <li class="tm-nav-item">
-                            
-                            <a asp-controller="Account" asp-action="Logout" class="tm-nav-item-link tm-button">Wyloguj</a>
-                        </li>
-                    </ul>
+                        <ul class="tm-main-nav-ul">
+                            <li class="tm-nav-item">
+                                <a asp-controller="Home" asp-action="Index" class="tm-nav-item-link tm-button active">Strona główna</a>
+                            </li>
+                            <li class="tm-nav-item">
+                                <a asp-controller="Timesheet" asp-action="Add" class="tm-nav-item-link tm-button">Dodaj wpis</a>
+                            </li>
+                            <li class="tm-nav-item">
+                                <a asp-controller="Chats" asp-action="Index" class="tm-nav-item-link tm-button">Chat</a>
+                            </li>
+                            <li class="tm-nav-item">
+                                <a asp-controller="Account" asp-action="Logout" class="tm-nav-item-link tm-button">Wyloguj</a>
+                            </li>
+                        </ul>
                     }
                     else
                     {
@@ -88,8 +91,6 @@
 
     </div> <!-- container-fluid -->
     <!-- load JS files -->
-
-    
     <!-- Templatemo scripts -->
     <script>
 
@@ -119,6 +120,6 @@
             $('.tm-current-year').text(new Date().getFullYear());
         });
 
-    </script>
+    </script>    
 </body>
 </html>

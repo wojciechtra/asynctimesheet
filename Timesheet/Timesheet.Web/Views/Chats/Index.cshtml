@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>SignalR Simple Chat</title>
+    <style type="text/css">
+
+        .container {
+            background-color: #CC6733;
+            border: solid #EEEEEE;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .msg-container {
+            background-color: #EEEEEE;
+            border: solid #EEEEEE;
+            padding: 20px;
+            margin: 20px;
+        }
+        #discussion {
+            list-style-type: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" placeholder="Napisz coś..." id="message" />
+        <input type="button" id="sendmessage" value="Wyślij" />
+        <div class="msg-container">
+            <ul id="discussion"></ul>
+        </div>
+        
+    </div>    
+    <script type="text/javascript" src="lib/signalr.min.js"></script>
+    
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+
+            var messageInput = document.getElementById('message');
+            var name = '@User.Identity.Name';
+            messageInput.focus();
+            var connection = new signalR.HubConnectionBuilder()
+                .withUrl('/chat')
+                .build();
+            connection.on('broadcastMessage', function (time, name, message) {
+                var encodedName = name;
+                var encodedMsg = message;
+                var liElement = document.createElement('li');
+                liElement.innerHTML = '<strong>' + encodedName + '</strong>:&nbsp;&nbsp;' + encodedMsg;
+                liElement.setAttribute("title", time); 
+                document.getElementById('discussion').insertAdjacentElement('afterbegin', liElement);
+            });
+
+            connection.start()
+                .then(function () {
+                    console.log('connection started');
+                    document.getElementById('sendmessage').addEventListener('click', function (event) {
+                        connection.invoke('send', name, messageInput.value);
+                        messageInput.value = '';
+                        messageInput.focus();
+                        event.preventDefault();
+                    });
+                })
+                .catch(error => {
+                    console.error(error.message);
+                });
+        });
+    </script>
+</body>
+</html>

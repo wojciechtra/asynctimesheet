@@ -116,5 +116,10 @@ namespace Timesheet.Web.Controllers
                 aaData = dataTable.aaData
             });
         }
+
+        public IActionResult Chat()
+        {
+            return View();
+        }
     }
 }

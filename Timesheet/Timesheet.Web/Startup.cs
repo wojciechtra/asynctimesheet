@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ChatSample.Hubs;
 using DataAccessLayer.Core.EntityFramework.UoW;
 using DataAccessLayer.Core.Interfaces.UoW;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -48,8 +48,9 @@ namespace Timesheet.Web
             services.AddTransient<ITimesheetRepository, MockTimesheetRepository>();
             services.AddMvc();
             services.ConfigureApplicationCookie(options => options.LoginPath = "/Account/Login");
-
+            services.AddSignalR();
             Services = services;
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -68,6 +69,13 @@ namespace Timesheet.Web
             app.UseAuthentication();
 
             app.UseMvcWithDefaultRoute();
+
+
+
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<ChatHub>("/chat");
+            });
         }
     }
 }
